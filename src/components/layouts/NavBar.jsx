@@ -27,17 +27,21 @@ function NavBar() {
 
       {/* mobile liks */}
       {menu && (
-        <div className="flex flex-col items-center p-8 gap-8 text-[#D1D5DC] hover:text-white absolute right-0 top-17.5 bg-[#0F0F1EF2]">
+        <div className="flex flex-col items-center p-8 gap-8 text-[#D1D5DC] absolute right-0 top-17.5 bg-[#0F0F1EF2]">
           {path.map((item) => (
-            <Link to={item.path}>{item.element}</Link>
+            <Link to={item.path} className="hover:text-white ">
+              {item.element}
+            </Link>
           ))}
         </div>
       )}
 
       {/* Desktop link */}
-      <div className="hidden sm:flex gap-8 text-[#D1D5DC] hover:text-white">
+      <div className="hidden sm:flex gap-8 text-[#D1D5DC] ">
         {path.map((item) => (
-          <Link to={item.path}>{item.element}</Link>
+          <Link to={item.path} className="hover:text-white ">
+            {item.element}
+          </Link>
         ))}
       </div>
 
@@ -45,6 +49,7 @@ function NavBar() {
       <Btn
         childeren={"Hire Me"}
         className={"hidden lg:block "}
+        btn_type={"main_btn"}
         onClick={() => navigate("/auth/login")}
       />
     </nav>

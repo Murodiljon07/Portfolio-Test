@@ -4,11 +4,7 @@ import { aboutReq } from "../../services/about.service";
 import { Outlet } from "react-router-dom";
 
 function DashboardPage() {
-  return (
-    <div>
-      <Outlet />
-    </div>
-  );
+  return <div></div>;
 }
 
 export default DashboardPage;
