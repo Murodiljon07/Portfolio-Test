@@ -1,10 +1,11 @@
-import React from "react";
-
-import { aboutReq } from "../../services/about.service";
-import { Outlet } from "react-router-dom";
+import ProfileAside from "../../components/admin/ProfileAside";
 
 function DashboardPage() {
-  return <div></div>;
+  return (
+    <div>
+      <ProfileAside />
+    </div>
+  );
 }
 
 export default DashboardPage;

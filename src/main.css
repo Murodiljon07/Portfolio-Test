@@ -11,3 +11,9 @@ body {
   padding-left: 20px;
   padding-right: 20px;
 }
+
+:root {
+  --color-primary: #7c3aed;
+  --color-secondary: #0f0f1e;
+  --color-nd-secondary: #1a1a2e;
+}

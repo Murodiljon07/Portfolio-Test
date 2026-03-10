@@ -4,6 +4,7 @@ import { toast } from "react-toastify";
 import Btn from "../ui/Btn";
 
 import { FaGithub, FaLinkedin, FaTelegram } from "react-icons/fa";
+import Loader3D from "../ui/loader";
 
 function HeroSection() {
   const [me, setMe] = useState(null);
@@ -22,25 +23,25 @@ function HeroSection() {
     getAbout();
   }, []);
 
-  if (!me) return null;
+  if (!me)
+    return (
+      <div>
+        <Loader3D />
+      </div>
+    );
 
   return (
     <section className="bg-[#1A1A2E]">
       <div className="container flex flex-col lg:flex-row items-center justify-between min-h-[90vh] gap-10">
-        
         {/* TEXT */}
         <div className="order-2 lg:order-1 max-w-[550px] flex flex-col gap-[22px] text-center lg:text-left">
           <h1 className="text-[38px] lg:text-[46px] font-bold leading-[1.2]">
             {me.name}
           </h1>
 
-          <h2 className="text-[20px] text-gray-400">
-            {me.role}
-          </h2>
+          <h2 className="text-[20px] text-gray-400">{me.role}</h2>
 
-          <p className="text-gray-400 leading-[1.7]">
-            {me.bio}
-          </p>
+          <p className="text-gray-400 leading-[1.7]">{me.bio}</p>
 
           {/* BUTTONS */}
           <div className="flex gap-[16px] justify-center lg:justify-start">

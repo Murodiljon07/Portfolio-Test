@@ -1,13 +1,14 @@
 import React from "react";
 import HeroSection from "../../components/public/HeroSection";
 import AboutMeSection from "../../components/public/AboutMeSection";
+import SklExpSection from "../../components/public/SklExpSection";
 
 function HomePage() {
   return (
     <div>
       <HeroSection />
       <AboutMeSection />
-      {/* add additional sections here as you continue implementing the Figma design */}
+      <SklExpSection />
     </div>
   );
 }

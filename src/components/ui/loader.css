@@ -1,0 +1,60 @@
+.loader-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #1a1a2e;
+  perspective: 1000px; /* 3D effekt uchun */
+}
+
+.cube {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  transform-style: preserve-3d;
+  animation: rotateCube 3s infinite linear;
+}
+
+.face {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-color: #7c3aed;
+  border: 2px solid #fff3;
+}
+
+.front {
+  transform: rotateY(0deg) translateZ(50px);
+}
+.back {
+  transform: rotateY(180deg) translateZ(50px);
+}
+.right {
+  transform: rotateY(90deg) translateZ(50px);
+}
+.left {
+  transform: rotateY(-90deg) translateZ(50px);
+}
+.top {
+  transform: rotateX(90deg) translateZ(50px);
+}
+.bottom {
+  transform: rotateX(-90deg) translateZ(50px);
+}
+
+@keyframes rotateCube {
+  0% {
+    transform: rotateX(0deg) rotateY(0deg);
+  }
+  100% {
+    transform: rotateX(360deg) rotateY(360deg);
+  }
+}
+
+.loading-text {
+  margin-top: 20px;
+  color: #ccc;
+  font-size: 1.2rem;
+  font-weight: 500;
+}

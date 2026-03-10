@@ -8,4 +8,8 @@ export const aboutReq = {
   post: (data) => {
     return api.post("/about/", { data });
   },
+
+  update: (id, data) => {
+    return api.put(`/about/${id}/`, data);
+  },
 };

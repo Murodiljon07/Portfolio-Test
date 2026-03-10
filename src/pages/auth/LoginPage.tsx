@@ -5,17 +5,15 @@ import { useNavigate } from "react-router-dom";
 import Input from "../../components/ui/Input";
 
 function LoginPage() {
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
-  const navigate = useNavigate();
 
   const handelSubmit = async (e: any) => {
     e.preventDefault();
 
     if (authPass.email && authPass.password) {
       localStorage.setItem("token", "login");
-      console.log(authPass.email, authPass.password, email, password);
 
       return navigate("/admin/dashboard");
     }
