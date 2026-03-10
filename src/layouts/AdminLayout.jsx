@@ -1,22 +1,7 @@
-import React, { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-import { Link, Outlet } from "react-router-dom";
-import AdminNavBar from "../components/layouts/AdminNavBar";
+import DashboardPage from "../pages/admin/DashboardPage";
 
 function AdminLayout() {
-  return (
-    <div className="bg-[#0F0F1E] h-screen">
-      <header>
-        <aside className="h-[100px] w-full bg-amber-500">
-          <Link to={"/"}>GO Home</Link>
-        </aside>
-        <AdminNavBar />
-      </header>
-      <main className="overflow-y-auto h-full py-10">
-        <Outlet />
-      </main>
-    </div>
-  );
+  return <DashboardPage />;
 }
 
 export default AdminLayout;

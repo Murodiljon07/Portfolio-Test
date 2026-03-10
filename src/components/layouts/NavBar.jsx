@@ -47,7 +47,7 @@ function NavBar() {
 
       {/* admin hear */}
       <Btn
-        childeren={"Hire Me"}
+        children={"Hire Me"}
         className={"hidden lg:block "}
         btn_type={"main_btn"}
         onClick={() => navigate("/auth/login")}

@@ -1,1 +1,13 @@
 @import "tailwindcss";
+
+body {
+  background: #0f0f1e;
+  color: white;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
