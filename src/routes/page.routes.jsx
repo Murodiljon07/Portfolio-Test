@@ -10,6 +10,7 @@ import LoginPage from "../pages/auth/LoginPage";
 import AdminLayout from "../layouts/AdminLayout";
 import { path } from "../data/pathData";
 import DashboardPage from "../pages/admin/DashboardPage";
+import ProtectRouter from "./ProtectRouter";
 
 export const routes = createBrowserRouter([
   {
@@ -30,11 +31,16 @@ export const routes = createBrowserRouter([
 
   {
     path: "/admin",
-    element: <AdminLayout />,
+    element: <ProtectRouter />,
     children: [
       {
-        path: "dashboard",
-        element: <DashboardPage />,
+        element: <AdminLayout />,
+        children: [
+          {
+            path: "dashboard",
+            element: <DashboardPage />,
+          },
+        ],
       },
     ],
   },

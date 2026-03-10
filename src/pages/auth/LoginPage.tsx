@@ -14,6 +14,7 @@ function LoginPage() {
     e.preventDefault();
 
     if (authPass.email && authPass.password) {
+      localStorage.setItem("token", "login");
       console.log(authPass.email, authPass.password, email, password);
 
       return navigate("/admin/dashboard");
@@ -21,28 +22,39 @@ function LoginPage() {
   };
 
   return (
-    <form className="flex flex-col gap-4">
-      <label htmlFor="" className="flex gap-2 ">
-        Enter Email:
+    <form className="flex flex-col gap-6">
+      <div className="relative">
         <Input
-          className="bg-none border-none"
-          value={email}
           type="email"
-          placeholder="Enter Email"
+          value={email}
+          placeholder=" "
+          className="peer w-full border rounded-md px-3 py-2 bg-transparent outline-none"
           onChange={(e: any) => setEmail(e.target.value)}
         />
-      </label>
+        <label
+          className="absolute left-3 -top-2.5 bg-[#0F0F1E] px-1 text-sm text-gray-400
+ peer-focus:text-purple-500"
+        >
+          Enter Email
+        </label>
+      </div>
 
-      <label htmlFor="" className="flex gap-2 ">
-        Enter Password:
+      <div className="relative">
         <Input
-          className="bg-none border-none"
-          value={password}
           type="password"
-          placeholder="********"
+          value={password}
+          placeholder=" "
+          className="peer w-full border rounded-md px-3 py-2 bg-transparent outline-none"
           onChange={(e: any) => setPassword(e.target.value)}
         />
-      </label>
+        <label
+          className="absolute left-3 -top-2.5 bg-[#0F0F1E] px-1 text-sm text-gray-400
+ peer-focus:text-purple-500"
+        >
+          Enter Password
+        </label>
+      </div>
+
       <button
         onClick={handelSubmit}
         className="bg-[#7C3AED] text-white rounded-[14px] py-2 px-6 cursor-pointer"
