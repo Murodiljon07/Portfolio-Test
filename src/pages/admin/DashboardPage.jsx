@@ -1,10 +1,15 @@
-import ProfileAside from "../../components/admin/ProfileAside";
+import { toast } from "react-toastify";
+import { Outlet } from "react-router-dom";
 
 function DashboardPage() {
+  toast.success("Muvofaqiyatli kirildi");
   return (
-    <div>
-      <ProfileAside />
-    </div>
+    <header>
+      dlknoi
+      <main>
+        <Outlet />
+      </main>
+    </header>
   );
 }
 

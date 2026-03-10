@@ -174,10 +174,10 @@ function ProfileAside() {
       <Btn
         onClick={() => navigate("/")}
         btn_type="main_btn"
-        className="absolute bottom-10 w-[200px] flex justify-center items-center gap-4"
+        className="group absolute bottom-10 w-[200px] flex justify-center items-center gap-4"
       >
         Exit
-        <RxExit />
+        <RxExit className="transition-transform duration-300 group-hover:translate-x-1" />
       </Btn>
     </aside>
   );

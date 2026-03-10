@@ -1,10 +1,14 @@
-import DashboardPage from "../pages/admin/DashboardPage";
+import { Outlet } from "react-router-dom";
+import ProfileAside from "../components/admin/ProfileAside";
 
 function AdminLayout() {
   return (
-    <>
-      <DashboardPage />
-    </>
+    <div className="flex">
+      <ProfileAside />
+      <main>
+        <Outlet />
+      </main>
+    </div>
   );
 }
 

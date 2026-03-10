@@ -4,12 +4,18 @@ import { createBrowserRouter } from "react-router-dom";
 import PublicLayout from "../layouts/PublicLayout";
 import AuthLayout from "../layouts/AuthLayout";
 
-/* Pages */
+/* public pages */
 import HomePage from "../pages/public/HomePage";
+
+/* auth page */
 import LoginPage from "../pages/auth/LoginPage";
+
+/* admin page */
 import AdminLayout from "../layouts/AdminLayout";
-import { path } from "../data/pathData";
 import DashboardPage from "../pages/admin/DashboardPage";
+import ExperiansCustom from "../components/admin/ExperiansCustom";
+
+/* protect */
 import ProtectRouter from "./ProtectRouter";
 
 export const routes = createBrowserRouter([
@@ -31,14 +37,15 @@ export const routes = createBrowserRouter([
 
   {
     path: "/admin",
-    element: <ProtectRouter />,
+    element: <AdminLayout />,
     children: [
       {
-        element: <AdminLayout />,
+        path: "dashboard",
+        element: <DashboardPage />,
         children: [
           {
-            path: "dashboard",
-            element: <DashboardPage />,
+            index: true,
+            element: <ExperiansCustom />,
           },
         ],
       },

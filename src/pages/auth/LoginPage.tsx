@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { authPass } from "../../data/authPass";
 import { useNavigate } from "react-router-dom";
 import Input from "../../components/ui/Input";
+import { toast } from "react-toastify";
 
 function LoginPage() {
   const navigate = useNavigate();
@@ -12,10 +13,14 @@ function LoginPage() {
   const handelSubmit = async (e: any) => {
     e.preventDefault();
 
-    if (authPass.email && authPass.password) {
+    if (email === authPass.email && Number(password) === authPass.password) {
+      console.log(authPass.email, authPass.email, password, password);
+
       localStorage.setItem("token", "login");
 
       return navigate("/admin/dashboard");
+    } else {
+      toast.warning("Ma'lumotlar mos kelmadi");
     }
   };
 

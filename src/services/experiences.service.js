@@ -7,4 +7,7 @@ export const experiencesReq = {
   post: (data) => {
     return api.post("/experiences/", { data });
   },
+  update: (id, data) => {
+    return api.put(`/experiences/${id}/`, { data });
+  },
 };
