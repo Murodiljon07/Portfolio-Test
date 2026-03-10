@@ -1,18 +1,31 @@
 import { useState, useEffect } from "react";
-import { aboutReq } from "../../services/about.service";
-import { toast } from "react-toastify";
-
-import { RxExit } from "react-icons/rx";
-
-import Btn from "../../components/ui/Btn";
-import Loader3D from "../../components/ui/loader";
 import { useNavigate } from "react-router-dom";
 
+/* api requests */
+import { aboutReq } from "../../services/about.service";
+
+/* notification */
+import { toast } from "react-toastify";
+
+/* assets & icons */
+import { RxExit } from "react-icons/rx";
+
+/* components */
+import Btn from "../../components/ui/Btn";
+import Loader3D from "../../components/ui/loader";
+
+/* toolkit */
+import { useDispatch, useSelector } from "react-redux";
+import { goEditMode } from "../../toolkit/features/editModeSlice.js";
+
 function ProfileAside() {
+  const editMode = useSelector((state) => state.toggleEditMode.value);
+
+  const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const [about, setAbout] = useState(null);
-  const [editMode, setEditMode] = useState(false);
+  // const [editMode, setEditMode] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     role: "",
@@ -51,7 +64,7 @@ function ProfileAside() {
       const payload = { ...formData };
       await aboutReq.update(13, payload);
       setAbout((prev) => ({ ...prev, ...payload }));
-      setEditMode(false);
+      dispatch(goEditMode(false));
       toast.success("Ma’lumot saqlandi!");
     } catch (err) {
       toast.error("Saqlashda xato: " + err.message);
@@ -65,7 +78,7 @@ function ProfileAside() {
       bio: about.bio || "",
       cv_link: about.cv_link || "",
     });
-    setEditMode(false);
+    dispatch(goEditMode(false));
   };
 
   if (!about) return <Loader3D />;
@@ -163,7 +176,7 @@ function ProfileAside() {
           ) : (
             <button
               className="w-full bg-purple-600 hover:bg-purple-700 text-white py-2 rounded-md"
-              onClick={() => setEditMode(true)}
+              onClick={() => dispatch(goEditMode(!editMode))}
             >
               Edit
             </button>

@@ -5,14 +5,14 @@ const initialState = {
 };
 
 export const changeMode = createSlice({
-  name: "changeMode",
+  name: "toggleEditMode",
   initialState,
   reducers: {
-    editMode: (state, { payload }) => {
-      state = !state;
+    goEditMode: (state, { payload }) => {
+      state.value = payload;
     },
   },
 });
 
-export const { editMode } = changeMode.actions;
+export const { goEditMode } = changeMode.actions;
 export default changeMode.reducer;
