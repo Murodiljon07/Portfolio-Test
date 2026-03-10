@@ -30,10 +30,11 @@ function HeroSection() {
       </div>
     );
 
+  console.log(me);
+
   return (
     <section className="bg-[#1A1A2E]">
       <div className="container flex flex-col lg:flex-row items-center justify-between min-h-[90vh] gap-10">
-        {/* TEXT */}
         <div className="order-2 lg:order-1 max-w-[550px] flex flex-col gap-[22px] text-center lg:text-left">
           <h1 className="text-[38px] lg:text-[46px] font-bold leading-[1.2]">
             {me.name}
@@ -43,13 +44,11 @@ function HeroSection() {
 
           <p className="text-gray-400 leading-[1.7]">{me.bio}</p>
 
-          {/* BUTTONS */}
           <div className="flex gap-[16px] justify-center lg:justify-start">
             <Btn btn_type="main_btn">View My Work</Btn>
             <Btn btn_type="second_btn">Contact Me</Btn>
           </div>
 
-          {/* SOCIALS */}
           <div className="flex gap-[24px] text-[22px] justify-center lg:justify-start text-gray-300">
             <a href="https://github.com/Murodiljon07" target="_blank">
               <FaGithub />
@@ -68,7 +67,6 @@ function HeroSection() {
           </div>
         </div>
 
-        {/* IMAGE */}
         <div className="order-1 lg:order-2">
           <div className="w-[260px] h-[260px] lg:w-[360px] lg:h-[360px] rounded-full overflow-hidden border-[6px] border-[#7C3AED] shadow-lg">
             <img

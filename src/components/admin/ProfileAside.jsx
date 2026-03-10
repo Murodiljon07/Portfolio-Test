@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
 import { aboutReq } from "../../services/about.service";
 import { toast } from "react-toastify";
-import { useNavigate } from "react-router-dom";
 
 import { RxExit } from "react-icons/rx";
 
 import Btn from "../ui/Btn";
 import Loader3D from "../ui/loader";
+import { useNavigate } from "react-router-dom";
 
 function ProfileAside() {
   const navigate = useNavigate();
@@ -18,6 +18,7 @@ function ProfileAside() {
     role: "",
     bio: "",
     cv_link: "",
+    image: null,
   });
 
   useEffect(() => {
@@ -31,6 +32,7 @@ function ProfileAside() {
           role: data.role || "",
           bio: data.bio || "",
           cv_link: data.cv_link || "",
+          image: data.image,
         });
       } catch (err) {
         toast.error("Ma'lumotni olishda xato: " + err.message);
@@ -70,12 +72,19 @@ function ProfileAside() {
 
   return (
     <aside className="w-100 h-screen bg-[#1A1A2E] p-6 rounded-lg shadow-lg flex flex-col items-center gap-6 relative">
-      <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-[#7C3AED]">
-        <img
-          src={about.image || "M"}
-          alt={about.name}
-          className="w-full h-full object-cover"
-        />
+      <div
+        className={`w-32 h-32 rounded-full overflow-hidden border-4 border-[#7C3AED]  ${editMode ? "border-purple-500" : "border-gray-500"}`}
+      >
+        {editMode ? (
+          <input
+            type="file"
+            accept="image/*"
+            className={`w-full h-full object-cover `}
+            onChange={handleChange}
+          />
+        ) : (
+          <img src={about.image} alt="" />
+        )}
       </div>
 
       <div className="w-full flex flex-col gap-4">
