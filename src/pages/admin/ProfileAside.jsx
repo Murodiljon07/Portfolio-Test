@@ -4,8 +4,8 @@ import { toast } from "react-toastify";
 
 import { RxExit } from "react-icons/rx";
 
-import Btn from "../ui/Btn";
-import Loader3D from "../ui/loader";
+import Btn from "../../components/ui/Btn";
+import Loader3D from "../../components/ui/loader";
 import { useNavigate } from "react-router-dom";
 
 function ProfileAside() {
@@ -71,7 +71,7 @@ function ProfileAside() {
   if (!about) return <Loader3D />;
 
   return (
-    <aside className="w-100 h-screen bg-[#1A1A2E] p-6 rounded-lg shadow-lg flex flex-col items-center gap-6 relative">
+    <aside className="w-140 h-screen bg-[#1A1A2E] p-6 rounded-lg shadow-lg flex flex-col items-center gap-6 relative">
       <div
         className={`w-32 h-32 rounded-full overflow-hidden border-4 border-[#7C3AED]  ${editMode ? "border-purple-500" : "border-gray-500"}`}
       >

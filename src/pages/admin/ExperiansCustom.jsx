@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { experiencesReq } from "../../services/experiences.service";
+import { data } from "react-router-dom";
+import Input from "../../components/ui/Input";
 
 function ExperiansCustom() {
   const [formData, setFormData] = useState({
@@ -12,17 +14,11 @@ function ExperiansCustom() {
 
   const [experiences, setExperiences] = useState();
 
-  useEffect(() => {
-    async function getExp() {
-      try {
-        let data = (await experiencesReq.get()).data;
-      } catch (error) {}
-    }
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
 
-    getExp();
-  }, []);
-
-  return <div>ExperiansCustom</div>;
+  return <div>experians</div>;
 }
 
 export default ExperiansCustom;
