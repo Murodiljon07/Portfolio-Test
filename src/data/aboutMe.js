@@ -76,3 +76,45 @@ export const techStack = [
     title: "Git",
   },
 ];
+
+export const experians = [
+  {
+    index: "3+",
+    title: "Years Exp.",
+  },
+  {
+    index: "50+",
+    title: "Projects",
+  },
+  {
+    index: "20+",
+    title: "Happy Clients",
+  },
+];
+
+export const techPro = [
+  {
+    index: "95",
+    title: "React.js",
+  },
+  {
+    index: "90",
+    title: "JavaScript/ES6+",
+  },
+  {
+    index: "85",
+    title: "TypeScript",
+  },
+  {
+    index: "92",
+    title: "Tailwind CSS",
+  },
+  {
+    index: "98",
+    title: "HTML5/CSS3",
+  },
+  {
+    index: "88",
+    title: "Git & GitHub",
+  },
+];

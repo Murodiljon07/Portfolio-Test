@@ -13,7 +13,7 @@ function NavBar() {
   const [menu, setMenu] = useState(false);
   const navigate = useNavigate();
   return (
-    <nav className="flex items-center justify-between bg-[#0F0F1EF2] h-18.25 p-4 text-white">
+    <nav className="fixed top-0 w-full flex items-center justify-between bg-[#0F0F1EF2] h-18.25 p-4 text-white">
       <Link to={"/"} className="text-[20px]">
         Murodiljon
       </Link>
@@ -27,7 +27,7 @@ function NavBar() {
 
       {/* mobile liks */}
       {menu && (
-        <div className="flex flex-col items-center p-8 gap-8 text-[#D1D5DC] absolute right-0 top-17.5 bg-[#0F0F1EF2]">
+        <div className=" flex flex-col items-center p-8 gap-8 text-[#D1D5DC] absolute right-0 top-17.5 bg-[#0F0F1EF2]">
           {path.map((item) => (
             <Link to={item.path} className="hover:text-white ">
               {item.element}

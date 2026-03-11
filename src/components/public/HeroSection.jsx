@@ -26,7 +26,7 @@ function HeroSection() {
   if (!me) return <Loader3D />;
 
   return (
-    <section className="bg-[#1A1A2E]">
+    <section className="bg-[#1A1A2E] mt-[90px]">
       <div className="container flex flex-col lg:flex-row items-center justify-between min-h-[90vh] gap-10">
         <div className="order-2 lg:order-1 max-w-[550px] flex flex-col gap-[22px] text-center lg:text-left">
           <h1 className="text-[38px] lg:text-[46px] font-bold leading-[1.2]">

@@ -4,6 +4,7 @@ import { Outlet } from "react-router-dom";
 /* components */
 import NavBar from "../components/layouts/NavBar";
 import Footer from "../components/layouts/Footer";
+import Loader3D from "../components/ui/loader";
 
 function PublicLayout() {
   return (
