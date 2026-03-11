@@ -29,9 +29,9 @@ before:content-[''] before:absolute before:left-1/2 before:-translate-x-1/2 befo
                     <p>{title}</p>
                     <p>{index}%</p>
                   </div>
-                  <div className="h-3 border border-gray-100 rounded-2xl overflow-hidden">
+                  <div className="h-3 bg-(--color-nd-secondary)  rounded-2xl overflow-hidden">
                     <div
-                      className=" h-full bg-amber-200"
+                      className=" h-full bg-gradient-to-b from-[#7C3AED] to-[#00D8FF]"
                       style={{ width: `${index}%` }}
                     ></div>
                   </div>
