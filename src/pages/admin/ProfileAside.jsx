@@ -61,7 +61,7 @@ function ProfileAside() {
   const handleSave = async () => {
     try {
       const payload = { ...formData };
-      await aboutReq.update(13, payload);
+      await aboutReq.update(15, payload);
       setAbout((prev) => ({ ...prev, ...payload }));
       dispatch(goEditMode(false));
       toast.success("Ma’lumot saqlandi!");

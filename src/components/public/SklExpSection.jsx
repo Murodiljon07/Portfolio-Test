@@ -5,7 +5,7 @@ import { techPro } from "../../data/aboutMe";
 
 function SklExpSection() {
   useEffect(() => {
-    contactReq.get().then((res) => console.log(res.data));
+    contactReq.get().then((res) => res.data);
   }, []);
 
   return (
@@ -19,15 +19,17 @@ before:content-[''] before:absolute before:left-1/2 before:-translate-x-1/2 befo
 
       <div className="container">
         <div className="bg-(--color-secondary) p-12 rounded-2xl">
-          <h2>Technical Proficiency</h2>
+          <h2 className="text-[24px] text-center mb-[31px]">
+            Technical Proficiency
+          </h2>
           <div className="grid grid-cols-2 gap-8 ">
             {techPro.map((item) => {
               let { index, title } = item;
               return (
                 <div className="flex flex-col">
-                  <div className="flex justify-between">
+                  <div className="flex justify-between mb-2 text-4">
                     <p>{title}</p>
-                    <p>{index}%</p>
+                    <p className="text-(--color-primary)">{index}%</p>
                   </div>
                   <div className="h-3 bg-(--color-nd-secondary)  rounded-2xl overflow-hidden">
                     <div
