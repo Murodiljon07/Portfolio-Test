@@ -13,7 +13,7 @@ function HeroSection() {
     async function getAbout() {
       try {
         const res = await aboutReq.get();
-        const findMe = res.data.find((item) => item.id === 13);
+        const findMe = res.data.find((item) => item.id === 15);
         setMe(findMe);
       } catch (err) {
         toast(err.message);
@@ -23,14 +23,7 @@ function HeroSection() {
     getAbout();
   }, []);
 
-  if (!me)
-    return (
-      <div>
-        <Loader3D />
-      </div>
-    );
-
-  console.log(me);
+  if (!me) return <Loader3D />;
 
   return (
     <section className="bg-[#1A1A2E]">

@@ -25,7 +25,6 @@ function ProfileAside() {
   const navigate = useNavigate();
 
   const [about, setAbout] = useState(null);
-  // const [editMode, setEditMode] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     role: "",
@@ -38,7 +37,7 @@ function ProfileAside() {
     async function fetchAbout() {
       try {
         const res = await aboutReq.get();
-        const data = res.data.find((item) => item.id === 13);
+        const data = res.data.find((item) => item.id === 15);
         setAbout(data);
         setFormData({
           name: data.name || "",

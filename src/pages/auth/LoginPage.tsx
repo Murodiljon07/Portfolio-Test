@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 import { authPass } from "../../data/authPass";
+
 import { useNavigate } from "react-router-dom";
 import Input from "../../components/ui/Input";
 import { toast } from "react-toastify";
@@ -14,8 +15,6 @@ function LoginPage() {
     e.preventDefault();
 
     if (email === authPass.email && Number(password) === authPass.password) {
-      console.log(authPass.email, authPass.email, password, password);
-
       localStorage.setItem("token", "login");
 
       return navigate("/admin/dashboard");

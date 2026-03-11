@@ -1,3 +1,4 @@
+import { data } from "react-router-dom";
 import api from "../api/axios";
 
 export const skillsReq = {
@@ -6,5 +7,9 @@ export const skillsReq = {
   },
   post: (data) => {
     return api.post("/skills/", { data });
+  },
+
+  update: (id, data) => {
+    return api.put(`/skills/${id}`, data);
   },
 };
