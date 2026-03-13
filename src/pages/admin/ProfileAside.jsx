@@ -37,7 +37,7 @@ function ProfileAside() {
     async function fetchAbout() {
       try {
         const res = await aboutReq.get();
-        const data = res.data.find((item) => item.id === 15);
+        const data = res.data.find((item) => item.id === 14);
         setAbout(data);
         setFormData({
           name: data.name || "",
@@ -80,7 +80,19 @@ function ProfileAside() {
     dispatch(goEditMode(false));
   };
 
-  if (!about) return <Loader3D />;
+  if (!about)
+    return (
+      <>
+        <Btn
+          onClick={() => navigate("/")}
+          btn_type="main_btn"
+          className="group absolute bottom-10 w-[200px] flex justify-center items-center gap-4"
+        >
+          Exit
+          <RxExit className="transition-transform duration-300 group-hover:translate-x-1" />
+        </Btn>
+      </>
+    );
 
   return (
     <aside className="w-140 h-screen bg-[#1A1A2E] p-6 rounded-lg shadow-lg flex flex-col items-center gap-6 relative">

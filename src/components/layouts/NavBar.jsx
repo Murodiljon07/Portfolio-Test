@@ -21,7 +21,7 @@ function NavBar() {
       {/* menu mobile */}
       <Btn
         className={`sm:hidden  cursor-pointer text-[22px]`}
-        childeren={menu ? <RiCloseLargeFill /> : <RiMenuFold4Line />}
+        children={menu ? <RiCloseLargeFill /> : <RiMenuFold4Line />}
         onClick={() => setMenu(!menu)}
       />
 

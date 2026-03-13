@@ -22,31 +22,27 @@ before:content-[''] before:absolute before:left-1/2 before:-translate-x-1/2 befo
         Featured Projects
       </h3>
 
-      <p className="text-center max-w-[672px] mx-auto">
+      <p className="text-center max-w-[672px] mx-auto mb-[64px]">
         Here are some of my recent works that showcase my skills in building
         modern web applications.
       </p>
 
-      <div className="container my-[64px]">
+      <div className="container my-[64px] grid grid-cols-2 gap-8">
         {repos.slice(0, 4).map((item) => {
           let { name, language, visibility, created_at, svn_url } = item;
           return (
-            <div>
+            <div className="w-[625px] h-[625px] border rounded-[12px] overflow-hidden ">
+              <div className="h-[50%] bg-black"></div>
               <div>
-                <span>{created_at.slice(0, 11)}</span>
-                <span>{visibility}</span>
+                <h2>{name}</h2>
+                <div>{language}</div>
               </div>
-              <h3>{name}</h3>
-              <p>{language}</p>
-              <Link to={svn_url} target="_blank">
-                go git
-              </Link>
             </div>
           );
         })}
       </div>
 
-      <label htmlFor="" className="block mx-auto text-center ">
+      <label htmlFor="" className="block mx-auto text-center mt-[64px]">
         Want to see more?{" "}
         <Link
           to={"https://github.com/Murodiljon07"}

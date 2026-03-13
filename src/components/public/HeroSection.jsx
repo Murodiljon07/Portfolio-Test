@@ -13,7 +13,7 @@ function HeroSection() {
     async function getAbout() {
       try {
         const res = await aboutReq.get();
-        const findMe = res.data.find((item) => item.id === 15);
+        const findMe = res.data.find((item) => item.id === 14);
         setMe(findMe);
       } catch (err) {
         toast(err.message);
