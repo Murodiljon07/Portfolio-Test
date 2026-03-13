@@ -1,4 +1,4 @@
 export const authPass = {
-  email: "murodiljonabdumutalov12@gmail.com",
+  email: "adminME",
   password: 123456,
 };
