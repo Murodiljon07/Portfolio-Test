@@ -12,7 +12,9 @@ import { RxExit } from "react-icons/rx";
 
 /* components */
 import Btn from "../../components/ui/Btn";
-import Loader3D from "../../components/ui/loader";
+
+// me
+import me from "../../data/icons/me.jpeg"
 
 /* toolkit */
 import { useDispatch, useSelector } from "react-redux";
@@ -44,7 +46,7 @@ function ProfileAside() {
           role: data.role || "",
           bio: data.bio || "",
           cv_link: data.cv_link || "",
-          image: data.image,
+          image:me,
         });
       } catch (err) {
         toast.error("Ma'lumotni olishda xato: " + err.message);
@@ -61,7 +63,7 @@ function ProfileAside() {
   const handleSave = async () => {
     try {
       const payload = { ...formData };
-      await aboutReq.update(15, payload);
+      await aboutReq.update(14, payload);
       setAbout((prev) => ({ ...prev, ...payload }));
       dispatch(goEditMode(false));
       toast.success("Ma’lumot saqlandi!");

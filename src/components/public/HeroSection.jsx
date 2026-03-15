@@ -6,6 +6,8 @@ import Btn from "../ui/Btn";
 import { FaGithub, FaLinkedin, FaTelegram } from "react-icons/fa";
 import Loader3D from "../ui/loader";
 
+import myImg from "../../data/icons/me.jpeg"
+
 function HeroSection() {
   const [me, setMe] = useState(null);
 
@@ -63,7 +65,7 @@ function HeroSection() {
         <div className="order-1 lg:order-2">
           <div className="w-[260px] h-[260px] lg:w-[360px] lg:h-[360px] rounded-full overflow-hidden border-[6px] border-[#7C3AED] shadow-lg">
             <img
-              src={me.image}
+              src={myImg}
               alt={me.name}
               className="w-full h-full object-cover"
             />
